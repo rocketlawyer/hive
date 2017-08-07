@@ -568,7 +568,7 @@ public abstract class BaseSemanticAnalyzer {
         }
       }
       switch (currentChar) {
-      case '\0': result = spliceString(result, i, "\\0"); ++i; break;
+      case '\0': result = spliceString(result, i, "\\u0000"); i += 5; break;
       case '\'': result = spliceString(result, i, "\\'"); ++i; break;
       case '\"': result = spliceString(result, i, "\\\""); ++i; break;
       case '\b': result = spliceString(result, i, "\\b"); ++i; break;
